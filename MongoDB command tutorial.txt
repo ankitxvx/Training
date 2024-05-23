@@ -1,0 +1,101 @@
+show dbs
+use codeimprove
+db.users.insert({name:"test"})
+
+db.dropDatabase()
+
+db.createCollection("blogs",{"capped":true,"size":9000,"max":1999})
+
+db.users.insertMany([{name:"dxvs",email:"a@gmail.com"},{name:"ankit2",emai:"z@b.com"}])
+
+db.users.insertOne({name:"ankit",email:"axv@gmail.com"})
+
+db.users.find({$or:[{name:"ankit2"},{email:"a@gmail.com"}]})
+
+db.users.insertMany([{name:"test1",lang:["php","C++","Node"],age:26,email:"a@gmail.com"},{name:"test2",lang:["C++","JAVA"],age:34,emai:"z@b.com"},{name:"test3",lang:["GO","C++"],age:13,email:"v@b.com"}])
+ 
+
+db.inventory.find( { quantity: { $gt: 20 } } )
+
+
+db.users.find({$nor:[{name:"test2"}]})
+
+
+
+projection
+
+db.users.find({name:"test3"},{name:1,email:1,_id:0})
+
+update and delete
+
+db.users.updateOne({name:"test2"},{$set:{age:100}})
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.users.deleteOne({name:"ankit1"})
+
+db.users.find().limit(3)
+
+db.users.find().limit(3).skip(1)
+
+db.users.find({country:{$elemMatch:{code:"IN"}}})
+
+db.users.find({age:{$gt:22}}).count()
+
+db.users.distinct("age")
+
+aggregate([
+  {stage:1}:$project
+{stage:2}:$match
+{stage:3}:$group
+{stage:4}:$sort
+{stage:5}:$limit
+ 
+}
+db.users.aggregate([{$unwind:"$lang"},{$group:{_id:"$lang"}}])
+
+
+db.users.aggregate([{$match:{$nor:[{name:"test2"}]}}])
+
+$lookup
+
+ db.employees.aggregate([
+    {
+        $lookup:{
+            from:"department",
+            localField:"dept",
+            foreignField:"name",
+            as : "myData"
+        },{
+            $project:{
+                _id:0,name:1,mydata:{code:1}
+            }
+        }
+    }
+])
+
+import export 
+
+export
+mongodumb
+
+mongodumb -D folder name
+
+mongodump -d folder -c collection name
+
+
+
+import 
+
+
+mongorestore -d cim folder path
+
+
+
+
+
