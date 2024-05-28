@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #77aaff 3px solid;
+      }
+      header a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+      .main {
+        padding: 20px;
+        background: #fff;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .cart-item img {
+        width: 100px;
+      }
+      .cart-item-info {
+        flex: 1;
+        padding: 0 20px;
+      }
+      .cart-item-price,
+      .cart-item-quantity {
+        width: 100px;
+        text-align: center;
+      }
+      .cart-total {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      .cart-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .cart-buttons button {
+        background: #77aaff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .cart-buttons button:hover {
+        background: #5599ff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Shopping Cart</h1>
+      </div>
+    </header>
+    <div class="container main">
+      <div class="cart-item">
+        <div><img src="item1.jpg" alt="Item 1" /></div>
+        <div class="cart-item-info">
+          <h2>**title**</h2>
+          <p>Description of item 1</p>
+        </div>
+        <div class="cart-item-price">$10.00</div>
+        <div class="cart-item-quantity">
+          <input type="number" value="1" min="1" />
+        </div>
+      </div>
+      <div class="cart-item">
+        <div><img src="item2.jpg" alt="Item 2" /></div>
+        <div class="cart-item-info">
+          <h2>Item 2</h2>
+          <p>Description of item 2</p>
+        </div>
+        <div class="cart-item-price">$15.00</div>
+        <div class="cart-item-quantity">
+          <input type="number" value="2" min="1" />
+        </div>
+      </div>
+      <div class="cart-total">
+        <p>Total: $40.00</p>
+      </div>
+      <div class="cart-buttons">
+        <button type="button">Update Cart</button>
+        <button type="button">Proceed to Checkout</button>
+      </div>
+    </div>
+  </body>
+</html>
