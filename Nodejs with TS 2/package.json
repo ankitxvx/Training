@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-with-ts-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.14.0",
+    "mongodb": "^6.7.0",
+    "nodemon": "^3.1.2",
+    "typescript": "^5.4.5"
+  },
+  "description": ""
+}
